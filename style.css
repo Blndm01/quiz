@@ -22,7 +22,6 @@ body
 {
     border-radius: 30px;
     width: 400px;
-    max-height: 700px;
     border: 1px solid #ffffff20;
     overflow: hidden;
     background-color:white;
@@ -69,7 +68,6 @@ button
 .content
 {
     padding: 10px 30px;
-    max-height: 400px;
     overflow: auto;
 }
 .question
@@ -84,7 +82,7 @@ button
 }
 .option,.result-option
 {
-    min-height: 40px;
+    min-height: 60px;
     border-radius: 10px;
     background-color: #4469eb;
     display: flex;
@@ -157,6 +155,10 @@ button
 }
 
 
+.opt img{
+    width: 6.5rem;
+    min-height: 60px;
+    }
 
 #timer
 {

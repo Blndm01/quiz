@@ -40,7 +40,7 @@ let quizQuestion = (q) => {
             <div class="content-wrapper">
                 <h2 class="question">${current_question + "." + quiz_questions[q]['question']}</h2>
                 <p class="year">${quiz_questions[q]['year']}</p>
-                <img class="quiz_img" src="${quiz_questions[q]['img']}">
+                <div class ="img-container"></div>
                 <div id="option-container">
                 </div>
             </div>
@@ -49,13 +49,28 @@ let quizQuestion = (q) => {
             </div>
         </div>
     `;
-
+    if (quiz_questions[q].img){
+        document.querySelector(".img-container").innerHTML+= `<img class="quiz_img" src="${quiz_questions[q]["img"]}">`;
+    }
     let options_container = document.querySelector("#option-container");
-
     quiz_questions[q]['options'].forEach((option, index) => {
-        options_container.innerHTML += `<p class="option opt">${option}</p>`
-    });
+        options_container.innerHTML += `<div class="option opt opt-${index}">
+    
+        </div>`
 
+        console.log(option)
+
+        //if image exist
+        if(option.isImg){
+            document.querySelector(`.opt-${index}`).innerHTML+=`
+            <img src="${option.src}" />
+            `
+        } else{
+            document.querySelector(`.opt-${index}`).innerHTML+=`
+            <p>${option.src}</p>
+            `
+        }
+    });
 
     options = document.querySelectorAll(".option");
 
@@ -183,34 +198,64 @@ let viewResult = ()=>{
         quiz_result.innerHTML += `
         <div class="content-wrapper">
                 <h2 class="question">${index+1 + "." + quiz['question']}</h2>
+                <div class ="img-container"></div>
                 <div class="option-container${index}"></div>
+                
         </div>
         `;
+
+        if(quiz.img) {
+            document.querySelector(".img-container").innerHTML +=`
+            <img src="${quiz.img}" />
+            `
+        }
 
 
         option_container = document.querySelector(`.option-container${index}`);
 
-        quiz['options'].forEach((option,index)=>{
+        quiz.options.forEach((option,theIndex)=>{
+            document.querySelector(`.option-container${index}`).innerHTML+=`
+            <div class="option-${theIndex}
+            `
 
-            
-            if(quiz['selected_answer'] == quiz['answer']){
-                if(index+1 == quiz['answer']){
-                    option_container.innerHTML += `<p class="result-option correct">${option} <span class ="anc">وەڵامی ڕاست</span></p>`
+            if(option.isImg){
+                if(quiz.selected_answer == quiz.answer){
+                    if(theIndex+1 == quiz.answer){
+                        option_container.innerHTML += `<img src=${option.src} class="result-option correct" />`
+                    }else{
+                        option_container.innerHTML += `<img src=${option.src} class="result-option" />`
+                    }
                 }else{
-                    option_container.innerHTML += `<p class="result-option">${option}</p>`
+                    if(index+1 == quiz.answer){
+                        option_container.innerHTML += `<img src=${option.src} class="result-option correct" />`
+                    }else if(index+1 == quiz.selected_answer){
+                        option_container.innerHTML += `<img src=${option.src} class="result-option wrong" />`
+                    }else{
+                        option_container.innerHTML +=`<img src=${option.src} class="result-option" />`
+                    }
                 }
-            }else{
-                if(index+1 == quiz['answer']){
-                    option_container.innerHTML += `<p class="result-option correct">${option} <span class ="anc">وەڵامی ڕاست</span></p>`
-                }else if(index+1 == quiz['selected_answer']){
-                    option_container.innerHTML += `<p class="result-option wrong">${option} <span class ="an">وەڵامی تۆ</span></p>`
+            } else{
+                if(quiz.selected_answer == quiz.answer){
+                    if(theIndex+1 == quiz['answer']){
+                        option_container.innerHTML += `<p class="result-option correct">{<span class ="anc">وەڵامی ڕاست</span></p>`
+                    }else{
+                        option_container.innerHTML += `<p class="result-option"><img src ="${option.src}" alt="YY"/></p>`
+                    }
                 }else{
-                    option_container.innerHTML += `<p class="result-option">${option}</p>`
+                    if(index+1 == quiz['answer']){
+                        option_container.innerHTML += `<p class="result-option correct">${option.src} <span class ="anc">وەڵامی ڕاست</span></p>`
+                    }else if(index+1 == quiz['selected_answer']){
+                        option_container.innerHTML += `<p class="result-option wrong">${option.src} <span class ="an">وەڵامی تۆ</span></p>`
+                    }else{
+                        option_container.innerHTML += `<p class="result-option">${option.src}</p>`
+                    }
                 }
             }
-
-
+           
         });
 
+        const displayImage = () =>{
+
+        }
     });
 }
