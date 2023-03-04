@@ -206,7 +206,7 @@ let viewResult = ()=>{
 
         if(quiz.img) {
             document.querySelector(".img-container").innerHTML +=`
-            <img src="${quiz.img}" />
+            <img class="quiz_img" src="${quiz.img}" />
             `
         }
 
@@ -221,23 +221,23 @@ let viewResult = ()=>{
             if(option.isImg){
                 if(quiz.selected_answer == quiz.answer){
                     if(theIndex+1 == quiz.answer){
-                        option_container.innerHTML += `<img src=${option.src} class="result-option correct" />`
+                        option_container.innerHTML += `<p class="result-option"><img src ="${option.src}" alt="YY"/></p>`
                     }else{
-                        option_container.innerHTML += `<img src=${option.src} class="result-option" />`
+                        option_container.innerHTML += `<img src=${option.src} class="result-option"/>`
                     }
                 }else{
                     if(index+1 == quiz.answer){
-                        option_container.innerHTML += `<img src=${option.src} class="result-option correct" />`
+                        option_container.innerHTML += `<img src=${option.src} class="result-option roimg correct" /> <span class ="anc">وەڵامی ڕاست</span>`
                     }else if(index+1 == quiz.selected_answer){
-                        option_container.innerHTML += `<img src=${option.src} class="result-option wrong" />`
+                        option_container.innerHTML += `<img src=${option.src} class="result-option roimg wrong" /> <span class ="anc">وەڵامی ڕاست</span>`
                     }else{
-                        option_container.innerHTML +=`<img src=${option.src} class="result-option" />`
+                        option_container.innerHTML +=`<img src=${option.src} class="result-option roimg" /> <span class ="anc">وەڵامی ڕاست</span>`
                     }
                 }
             } else{
                 if(quiz.selected_answer == quiz.answer){
                     if(theIndex+1 == quiz['answer']){
-                        option_container.innerHTML += `<p class="result-option correct">{<span class ="anc">وەڵامی ڕاست</span></p>`
+                        option_container.innerHTML += `<p class="result-option correct"><span class ="anc">وەڵامی ڕاست</span></p>`
                     }else{
                         option_container.innerHTML += `<p class="result-option"><img src ="${option.src}" alt="YY"/></p>`
                     }
@@ -251,7 +251,6 @@ let viewResult = ()=>{
                     }
                 }
             }
-           
         });
 
         const displayImage = () =>{
