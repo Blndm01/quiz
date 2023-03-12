@@ -27,17 +27,16 @@ let quiz_questions = [
     
     // {
     //     // write yout question here
-    //     question: "له‌ كام له‌م ڕستانه‌دا (كاری ناته‌واو)به‌ شێوه‌ی (ته‌واوكه‌ری ڕاسته‌وخۆ) ته‌واوكراوه‌؟",
-    //     year:"٢٠٢١-٢٠٢٢ خوولی یەکەم",
+    //     question: " "
+    //     year:" ",
     //     options: [
-    //         "براكه‌م بووه‌ به‌ ئه‌ندازیار",
-    //         "یارییه‌كه‌ به‌شه‌و بوو",
-    //         "قه‌ڵه‌مه‌كه‌ت به‌ من بوو",
-    //         "هیچیان",
+    //         " ",
+    //         " ",
+    //         " ",
+    //         " ",
     //     ],
     //     // correct option (1,2,3,4 etc)
-    //     answer: 2,
-    // //    selected_answer:null
+    //     answer: ,
     // },
     {
         // write yout question here
@@ -47,17 +46,17 @@ let quiz_questions = [
         options: [
             {
                 isImg:true,
-                src:"img/Untitled-removebg-preview.png"
+                src:"img/Untitled_design__3_-removebg-preview.png"
             },
             {
                 isImg:true,
-                src:"img/Untitled-removebg-preview.png"
+                src:"img/bio.jpg"
             },   {
                 isImg:true,
                 src:"img/CodeCogsEqn-removebg-preview.png"
             },   {
-                isImg:true,
-                src:"img/CodeCogsEqn-removebg-preview.png"
+                isImg:false,
+                src:"تەواوکەری بەیاریدە"
             },
             // "sئامرازی دانه‌پاڵ(ە)",
             // "ئامرازی دانه‌پاڵ (ی)",
@@ -66,6 +65,5 @@ let quiz_questions = [
         ],
         // correct option (1,2,3,4 etc)
         answer: 3,
-    //    selected_answer:null
     },
 ];

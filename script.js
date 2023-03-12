@@ -217,34 +217,34 @@ let viewResult = ()=>{
             document.querySelector(`.option-container${index}`).innerHTML+=`
             <div class="option-${theIndex}
             `
-
+//  document.querySelector(`.opt-${index}`).innerHTML+=`<p>${option.src}</p>
             if(option.isImg){
                 if(quiz.selected_answer == quiz.answer){
                     if(theIndex+1 == quiz.answer){
-                        option_container.innerHTML += `<p class="result-option"><img src ="${option.src}" alt="YY"/></p>`
+                        option_container.innerHTML += `<img src=${option.src} class="result-option roimg correct" />`
                     }else{
                         option_container.innerHTML += `<img src=${option.src} class="result-option"/>`
                     }
                 }else{
-                    if(index+1 == quiz.answer){
-                        option_container.innerHTML += `<img src=${option.src} class="result-option roimg correct" /> <span class ="anc">وەڵامی ڕاست</span>`
-                    }else if(index+1 == quiz.selected_answer){
-                        option_container.innerHTML += `<img src=${option.src} class="result-option roimg wrong" /> <span class ="anc">وەڵامی ڕاست</span>`
+                    if(theIndex+1 == quiz.answer){
+                        option_container.innerHTML += `<img src=${option.src} class="result-option roimg correct" />`
+                    }else if(theIndex+1 == quiz.selected_answer){
+                        option_container.innerHTML += `<img src=${option.src} class="result-option roimg wrong" /> `
                     }else{
-                        option_container.innerHTML +=`<img src=${option.src} class="result-option roimg" /> <span class ="anc">وەڵامی ڕاست</span>`
+                        option_container.innerHTML +=`<img src=${option.src} class="result-option roimg" />`
                     }
                 }
             } else{
                 if(quiz.selected_answer == quiz.answer){
                     if(theIndex+1 == quiz['answer']){
-                        option_container.innerHTML += `<p class="result-option correct"><span class ="anc">وەڵامی ڕاست</span></p>`
+                        option_container.innerHTML += `<p class="result-option correct">${option.src} <span class ="anc">وەڵامی ڕاست</span></p>`
                     }else{
-                        option_container.innerHTML += `<p class="result-option"><img src ="${option.src}" alt="YY"/></p>`
+                        option_container.innerHTML += `<p class="result-option">${option.src} </p>`
                     }
                 }else{
-                    if(index+1 == quiz['answer']){
+                    if(theIndex+1 == quiz['answer']){
                         option_container.innerHTML += `<p class="result-option correct">${option.src} <span class ="anc">وەڵامی ڕاست</span></p>`
-                    }else if(index+1 == quiz['selected_answer']){
+                    }else if(theIndex+1 == quiz['selected_answer']){
                         option_container.innerHTML += `<p class="result-option wrong">${option.src} <span class ="an">وەڵامی تۆ</span></p>`
                     }else{
                         option_container.innerHTML += `<p class="result-option">${option.src}</p>`
