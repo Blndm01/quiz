@@ -46,17 +46,17 @@ let quiz_questions = [
         options: [
             {
                 isImg:true,
-                src:"img/Untitled_design__3_-removebg-preview.png"
+                src:"img/test.png"
             },
             {
                 isImg:true,
-                src:"img/bio.jpg"
+                src:"img/test.png"
             },   {
                 isImg:true,
                 src:"img/CodeCogsEqn-removebg-preview.png"
             },   {
-                isImg:false,
-                src:"تەواوکەری بەیاریدە"
+                isImg:true,
+                src:"img/tes2.png"
             },
             // "sئامرازی دانه‌پاڵ(ە)",
             // "ئامرازی دانه‌پاڵ (ی)",

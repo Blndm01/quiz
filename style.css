@@ -1,32 +1,28 @@
-@font-face{
-	font-family: 'Rabar_035';
-	src:url('Rabar_035.ttf')
-}
-*
-{
+@font-face {
+    font-family: "Rabar_035";
+    src: url("Rabar_035.ttf");
+  }
+  * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-	font-family:Rabar_035; 
-}
-body
-{
+    font-family: Rabar_035;
+  }
+  body {
     background-color: #4469eb;
     min-height: 100vh;
     display: grid;
     place-items: center;
-}
-#container
-{
+  }
+  #container {
     border-radius: 30px;
     width: 400px;
     border: 1px solid #ffffff20;
     overflow: hidden;
-    background-color:white;
+    background-color: white;
     color: #4469eb;
-}
-.header
-{
+  }
+  .header {
     background-color: white;
     height: 100px;
     display: grid;
@@ -34,25 +30,21 @@ body
     font-size: 25px;
     color: #4469eb;
     border-bottom: 1px solid #4469eb;
-}
-ol
-{
+  }
+  ol {
     padding: 10px 15px 10px 40px;
-}
-li
-{
+  }
+  li {
     font-size: 20px;
     margin: 5px;
-    margin-right:1.4rem;
-}
-#start-quiz-wrapper
-{
+    margin-right: 1.4rem;
+  }
+  #start-quiz-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-button
-{
+  }
+  button {
     background-color: #4469eb;
     border: none;
     outline: none;
@@ -62,114 +54,111 @@ button
     font-size: 13px;
     color: white;
     padding: 15px 20px;
-}
-.content
-{
+  }
+  .content {
     padding: 10px 30px;
     overflow: auto;
-}
-.question
-{
+  }
+  .question {
     color: #4469eb;
     font-size: 18px;
     padding: 5px 3px;
-}
-.quiz_img{
+  }
+  .quiz_img {
     width: 200px;
     margin-bottom: 20px;
-}
-.option,.result-option
-{
+  }
+  .option,
+  .result-option {
     min-height: 60px;
     border-radius: 10px;
     background-color: #4469eb;
     display: flex;
+    flex-flow: row nowrap;
     align-items: center;
     padding: 0 20px;
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer;
     color: white;
     margin: 8px 0;
     position: relative;
-}
-.option p {
-    text-align: center;
+    text-align: right;
+    
+  }
+  .option p {
+    text-align: right;
     margin-top: 12px;
-}
-.an{
-    position: absolute;
-    right: 270px;
-}
-.anc{
-    position: absolute;
-    right: 257px;
-}
+    }
 
-.opt span
-{   
+  .an {
     position: absolute;
     right: 285px;
-    border-radius: 5px;
-    font-size: 11px;
-    background-color: white;
-    color: #4469eb;
-    padding: 5px;
-}
-
-.result-option span
-{   
+  }
+  .anc {
     position: absolute;
+    right: 270px;
+  }
+  
+  .opt span {
+    position: absolute;
+    right: 290px;
     border-radius: 5px;
     font-size: 11px;
-    background-color: white;
-    color: #4469eb;
     padding: 5px;
-}
-.footer
-{
+    margin-right: 8px;
+    
+  }
+  
+  .result-option span {
+    border-radius: 5px;
+    font-size: 11px;
+    padding: 5px;
+  }
+  .footer {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
     margin: 15px 0;
-}
-.correct
-{
+  }
+  .correct {
     background-color: #1bd027;
     color: #1e293b;
-}
-.correct span
-{
+  }
+  .correct span {
     background: #1e293b;
     color: #1bd027;
-}
-
-.wrong
-{
+  }
+  
+  .wrong {
     background-color: #e73030;
     color: #1e293b;
-}
-
-.wrong span
-{
+  }
+  
+  .wrong span {
     background: #1e293b;
     color: #e73030;
-}
-
-
-.opt img{
-    width: 15rem;
-    max-height: 110px;
-    }
-
-.roimg{
-        width: 22rem;
-        min-height: 60px;
-        }
-
-#timer
-{
-    padding: 15px 5px; 
+  }
+  
+  .opt img {
+    width: 80%;
+    max-height: 80px;
+    min-height: 80px;
+    object-fit: contain;
+    padding: 3px;
+  }
+  
+  .roimg {
+    width: 80%;
+    min-height: 80px;
+    max-height: 80px;
+    object-fit: contain;
+    padding: 3px;
+  }
+  
+  
+  #timer {
+    padding: 15px 5px;
     /* background-color: #ccdae7; */
     display: grid;
     place-items: center;
@@ -178,64 +167,55 @@ button
     font-size: 14px;
     margin: 10px 0 20px 0;
     color: #4469eb;
-}
-.time-over
-{
+  }
+  .time-over {
     color: #e73030 !important;
-}
-
-
-/* result page */
-
-#trophy
-{
+  }
+  
+  /* result page */
+  
+  #trophy {
     font-size: 100px;
     text-align: center;
     margin: 40px 0;
-}
-#score
-{
+  }
+  #score {
     text-align: center;
     font-size: 14px;
-}
-#score b
-{
+  }
+  #score b {
     color: #4469eb;
     font-size: 25px;
-}
-.result-score
-{
+  }
+  .result-score {
     margin-top: 5px;
-}
-#result-footer
-{
+  }
+  #result-footer {
     display: flex;
     justify-content: center;
     margin: 30px 0;
-}
-#result-footer button
-{
+  }
+  #result-footer button {
     margin: 0 10px;
-}
-
-#detailed-result
-{
+  }
+  
+  #detailed-result {
     background: transparent;
     color: #4469eb;
     border: 1px solid #4469eb;
-}
-
-@media only screen and (max-width: 992px){
+  }
+  
+  @media only screen and (max-width: 992px) {
     .opt span {
-    right:296px ; 
+      right: 296px;
     }
-    .an{
-        position: absolute;
-        right: 286px;
+    .an {
+      position: absolute;
+      right: 286px;
     }
-    .anc{
-        position: absolute;
-        right: 273px;
+    .anc {
+      position: absolute;
+      right: 273px;
     }
-	
-}
+  }
+  
